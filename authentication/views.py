@@ -1,14 +1,14 @@
 import jwt
 from decouple import config
+from user.models import User
+from rest_framework import status
+from .serializers import LoginSerializer
+from helpers.user_helper import user_id
+from rest_framework.views import APIView
 from django.contrib.auth import authenticate
 from rest_framework.response import Response
-from .serializers import LoginSerializer
-from rest_framework.views import APIView
-from rest_framework import status
 from datetime import datetime, timedelta
 from helpers.redis_helper import store_redis, delete_redis
-from helpers.user_helper import user_id
-from user.models import User
 
 class Login(APIView):
     def post(self, request):
