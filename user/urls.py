@@ -1,7 +1,7 @@
 # myapp/urls.py
-from django.urls import path
+from django.urls import re_path
 from . import views
 
 urlpatterns = [
-    path('/list', views.index)
+    re_path('list/?$', views.index)
 ]

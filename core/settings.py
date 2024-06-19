@@ -30,30 +30,20 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.postgres',
     'rest_framework',
-    'rest_framework.authtoken',
+    'django_seeding',
+    'django_truncate',
     'authentication',
     'user',
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'middleware.authenticate.Authenticate',
+    "middleware.authenticate.Authenticate",
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -106,13 +96,6 @@ DATABASES = {
     'default': DATABASE_CONFIG[config('DB_DATABASE', 'sqlite')]
 }
 
-MIGRATION_MODULES = {
-    # 'auth': None,
-    # 'contenttypes': None,
-    # 'admin': None,
-    # 'sessions': None,
-}
-
 BASE_REDIS_URL = f"redis://{config('REDIS_URL', '127.0.0.1')}:{config('REDIS_PORT', 6379)}"
 CACHES = {
     'default': {
@@ -126,7 +109,7 @@ CACHES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
-AUTH_USER_MODEL = 'user.User'
+AUTH_USER_MODEL = "user.User"
 
 AUTHENTICATION_BACKENDS = [
     'authentication.backends.Authentication',

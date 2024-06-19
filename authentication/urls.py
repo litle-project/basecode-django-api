@@ -1,8 +1,8 @@
 # myapp/urls.py
-from django.urls import path
+from django.urls import re_path
 from .views import Login, Logout
 
 urlpatterns = [
-    path('login/', Login.as_view()),
-    path('logout/', Logout.as_view())
+    re_path('login', Login.as_view()),
+    re_path('logout', Logout.as_view())
 ]
