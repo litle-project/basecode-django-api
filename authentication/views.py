@@ -49,7 +49,7 @@ class Login(APIView):
                 }
             }, status=status.HTTP_200_OK)
         except Exception as error:
-            return Response({'code': 500, 'message': str(error), 'data': None}, status=status.HTTP_200_OK)
+            return Response({'code': 500, 'message': str(error), 'data': None}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class Logout(APIView):
     def get(self, request):
@@ -57,6 +57,6 @@ class Logout(APIView):
             user = User.objects.get(id=user_id(request))
             delete_redis(f"token-{user.email}")
 
-            return Response({'code': 200, 'message': 'OK', 'data': None}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response({'code': 200, 'message': 'OK', 'data': None}, status=status.HTTP_200_OK)
         except Exception as error:
-            return Response({'code': 500, 'message': str(error), 'data': None}, status=status.HTTP_200_OK)
+            return Response({'code': 500, 'message': str(error), 'data': None}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
