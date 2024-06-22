@@ -4,5 +4,5 @@ from user.models import User
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("name", "email", "description")
+        exclude = ("password", "reset_password_token")
     pass
