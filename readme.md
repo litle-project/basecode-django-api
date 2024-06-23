@@ -5,9 +5,11 @@
 **HOW TO CREATE A NEW MODULE**
 - run command *pipenv run python manage.py startapp {module_name}*
 
-**HOW TO CREATE MIGRATION**
+**HOW TO CREATE EMPTY MIGRATION**
 - run command *pipenv run python manage.py makemigrations [your app name] --empty --name [migration name]*
-- for example, check out the authentication app
+
+**HOW TO CREATE MIGRATION**
+- run command *pipenv run python manage.py makemigrations [your app name]*
 
 **HOW TO RUN ALL MIGRATION**
 - run command *pipenv run python manage.py migrate*

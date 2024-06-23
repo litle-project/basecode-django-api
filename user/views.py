@@ -1,4 +1,5 @@
 import bcrypt
+import datetime
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -6,7 +7,6 @@ from .models import User
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
 from .serializers import UserSerializer, UserSaveSerializer
-from django.core import serializers
 
 @api_view(['GET'])
 def index(request):
@@ -71,7 +71,8 @@ def update(request, pk):
         User.objects.filter(pk=pk).update(
             name=paramter.get('name'),
             email=paramter.get('email'),
-            description=paramter.get('description')
+            description=paramter.get('description'),
+            updated_at=datetime.datetime.now(),
         )
 
         return Response({'code': 200, 'message': 'OK', 'data': None}, status=status.HTTP_200_OK)
