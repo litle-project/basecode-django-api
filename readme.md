@@ -2,6 +2,8 @@
 - run command *python -m venv env*
 - run command *source env/bin/activate*
 - run command *pipenv install -r requirements.txt*
+- run command *cp .env.example .env*
+- fill the credentials in .env file
 - run command *pipenv run python manage.py runserver*
 
 **HOW TO RUN**
