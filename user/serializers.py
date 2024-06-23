@@ -13,6 +13,6 @@ class UserSaveSerializer(serializers.ModelSerializer):
         exclude = ["reset_password_token"]
 
     def validate_password(self, value):
-        if len(value) <= 6:
+        if len(value) < 6:
             raise serializers.ValidationError("Password must be at least 6.")
         return value
