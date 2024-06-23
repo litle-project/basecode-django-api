@@ -1,3 +1,9 @@
+**HOW TO RUN IN FIRST TIME**
+- run command *python -m venv env*
+- run command *source env/bin/activate*
+- run command *pipenv install -r requirements.txt*
+- run command *pipenv run python manage.py runserver*
+
 **HOW TO RUN**
 - run command *source env/bin/activate*
 - run command *pipenv run python manage.py runserver*
