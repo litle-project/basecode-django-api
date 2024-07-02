@@ -31,3 +31,6 @@
 
 **HOW TO EXIT FROM VIRTUAL ENV**
 - run command *source deactivate*
+
+**HOW TO UPDATE REQUIREMENTS**
+- run command *pip freeze > requirements.txt*
